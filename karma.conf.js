@@ -7,6 +7,7 @@ module.exports = function(config) {
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
+    // plugins: ['karma-threshold-reporter'],
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
@@ -31,7 +32,7 @@ module.exports = function(config) {
     },
 
     browserify: {
-      transform: ['browserify-istanbul'],
+      transform: ['babelify','browserify-istanbul'],
       debug: true,
       bundleDelay: 1000
     },
@@ -40,7 +41,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'coverage'],
+    reporters: ['dots', 'coverage', 'threshold'],
 
 
     // web server port
@@ -53,12 +54,11 @@ module.exports = function(config) {
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_DEBUG,
+    logLevel: config.LOG_WARN,
 
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: false,
-
+    autoWatch: true,
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
@@ -76,6 +76,13 @@ module.exports = function(config) {
     coverageReporter: {
       type : 'html',
       dir : 'coverage/'
+    },
+
+    thresholdReporter: {
+      statements: 90,
+      branches: 60,
+      functions: 85,
+      lines: 90
     }
   })
 }
