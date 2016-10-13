@@ -1,0 +1,15 @@
+{
+  "name": "karma-browserify-istanbul",
+  "version": "1.0.0",
+  "description": "trying out some stuff",
+  "main": "index.js",
+  "author": "Sam <sjmarshy@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "istanbulify": "^0.1.0",
+    "karma": "^1.3.0",
+    "karma-browserify": "^5.1.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-phantomjs-launcher": "^1.0.2"
+  }
+}
