@@ -32,7 +32,7 @@ module.exports = function(config) {
     },
 
     browserify: {
-      transform: ['babelify','browserify-istanbul'],
+      transform: ['babelify'],
       debug: true,
       bundleDelay: 1000
     },
