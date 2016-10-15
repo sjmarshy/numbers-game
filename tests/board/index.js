@@ -6,3 +6,4 @@ import './raw';
 import './fresh';
 import './get';
 import './set';
+import './exhaust';

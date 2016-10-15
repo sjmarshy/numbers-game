@@ -1,4 +1,5 @@
 import test from 'tape';
+import { all } from 'ramda';
 import range from '../../src/js/util/range';
 
 test('range :: Number -> Number -> Array Number', t => {
@@ -11,14 +12,15 @@ test('range :: Number -> Number -> Array Number', t => {
         'length should be the distance between a and b, inclusive');
 
     const expected = [3, 4, 5, 6, 7, 8];
+    let i = -1;
     const c = 3;
     const d = 8;
     const actual = range(c, d);
 
+    t.ok(all(x => {
+        i += 1;
+        return x === expected[i];
+    }, actual), 'the array should be the numbers between c and d');
 
-    actual.map((x, i) => {
-        t.ok(x === expected[i],
-            'the array should be the numbers between c nad d');
-    });
     t.end();
 });
