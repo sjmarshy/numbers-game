@@ -3,6 +3,7 @@
 
 import './raw';
 import './fresh';
+import './exhaust';
 
 import test from 'tape';
 import {
