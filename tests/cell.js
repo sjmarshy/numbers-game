@@ -37,6 +37,7 @@ test('cell matches the inputs given', t => {
 test('should not allow arguments above 9', t => {
   try {
     raw(11, false);
+    /* istanbul ignore next */
     t.fail('an error should be thrown for integers above 9');
   } catch (e) {
     t.pass();
@@ -48,6 +49,7 @@ test('should not allow arguments above 9', t => {
 test('should not allow arguments beneath 1', t => {
   try {
     raw(0, true);
+    /* istanbul ignore next */
     t.fail('an error should be thrown for integers below 1');
   } catch (e) {
     t.pass();
