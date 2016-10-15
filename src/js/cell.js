@@ -7,3 +7,5 @@ export const raw = (value, exhausted) => {
 };
 
 export const fresh = () => raw(getRandomInteger(1, 9), false);
+
+export const exhaust = () => {};
