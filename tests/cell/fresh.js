@@ -1,14 +1,10 @@
-// fresh :: Cell
-
 import test from 'tape';
 import { fresh } from '../../src/js/cell';
 
-test('a fresh cell is not exhausted', t => {
-    t.plan(1);
-    t.equal(false, fresh().exhausted);
-});
+test('fresh :: Cell', t => {
+    t.equal(false, fresh().exhausted, 'a fresh cell is not exhausted');
+    t.ok(fresh().value !== fresh().value || fresh().value !== fresh().value,
+        'a fresh cell has a random value');
 
-test('a fresh cell has a random value', t => {
-    t.plan(1);
-    t.ok(fresh().value !== fresh().value || fresh().value !== fresh().value);
+    t.end();
 });

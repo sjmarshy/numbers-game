@@ -1,21 +1,17 @@
-// Cell :: { value :: Number
-//         , exhausted :: Boolean }
-
-import './raw';
-import './fresh';
-import './exhaust';
 
 import test from 'tape';
 import {
     fresh
 } from '../../src/js/cell';
 
-test('a cell has a value', t => {
-    t.plan(1);
-    t.ok(fresh().hasOwnProperty('value'));
+test(`Cell :: { value :: Number
+              , exhausted :: Boolean }`, t => {
+
+    t.ok(fresh().hasOwnProperty('value'), 'A Cell has a value');
+    t.ok(fresh().hasOwnProperty('exhausted'), 'A Cell can be exhausted');
+    t.end();
 });
 
-test('a cell has the property exhausted', t => {
-    t.plan(1);
-    t.ok(fresh().hasOwnProperty('exhausted'));
-});
+import './raw';
+import './fresh';
+import './exhaust';

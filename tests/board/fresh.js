@@ -1,56 +1,30 @@
 /* eslint no-console: "off" */
 import test from 'tape';
+import { all } from 'ramda';
 import { fresh } from '../../src/js/board';
 
-console.log('fresh :: Number -> Board');
+test('fresh :: Maybe Number -> Board', t => {
 
-test('a fresh board should have a values property', t => {
-    const b = fresh();
-    t.plan(1);
-    t.ok(b.hasOwnProperty('values'), 'property: values should exist');
-});
+    t.ok(fresh().hasOwnProperty('values'), 'property: values should exist');
 
-test('values should be an array', t => {
-    const values = fresh().values;
-    t.plan(1);
-    t.ok(Array.isArray(values), 'property: values should be an array');
-});
+    t.ok(Array.isArray(fresh().values), 'property: values should be an array');
 
-test('a fresh board should have a columns property', t => {
-    const b = fresh();
-    t.plan(1);
-    t.ok(b.hasOwnProperty('columns'));
-});
+    t.ok(fresh().hasOwnProperty('columns'), 'property: columns should exist');
 
-test('property columns should be a number', t => {
-    const columns = fresh().columns;
-    t.plan(1);
-    t.ok(typeof columns === 'number');
-});
+    t.ok(typeof fresh().columns === 'number',
+        'property columns should be a number');
 
-test('columns should default to 9', t => {
-    const b = fresh();
-    t.plan(1);
-    t.ok(b.columns === 9);
-});
+    t.ok(fresh().columns === 9, 'property columns should default to 9');
 
-test('columns should be set to the passed value', t => {
-    const num = 4;
-    const b = fresh(4);
-    t.plan(1);
-    t.ok(b.columns === num);
-});
+    t.ok(fresh(4).columns === 4, 'columns should be set to the passed value');
 
-test('there should be 2.5 rows of values', t => {
-    const b = fresh(9);
-    t.plan(1);
-    t.ok(b.values.length === Math.floor(9 * 2.5));
-});
+    t.ok(fresh().values.length === Math.floor(9 * 2.5),
+        'there should be two and a half rows of values');
 
-test('values should be cells', t => {
-    const b = fresh(9);
-    t.plan(Math.floor(9 * 2.5));
-    b.values.forEach(c => {
-        t.ok(c.hasOwnProperty('value') && c.hasOwnProperty('exhausted'));
-    });
+    t.ok(
+        all(c => c.hasOwnProperty('value') && c.hasOwnProperty('exhausted'),
+            fresh().values),
+        'values should all be cells');
+
+    t.end();
 });

@@ -1,20 +1,13 @@
-// exhaust :: Cell -> Cell
-
 import test from 'tape';
 import { fresh, exhaust } from '../../src/js/cell';
 
-test('should exhaust a cell', t => {
-    t.plan(1);
-    const cell = exhaust(fresh());
-    t.equal(true, cell.exhausted);
-});
-
-test('return value should be a new cell', t => {
-    t.plan(1);
-
+test('exhaust :: Cell -> Cell', t => {
     const cell = fresh();
-    const exhaustedCell = exhaust(cell);
-    cell.value = 0;
+    const newCell = exhaust(fresh());
+    t.equal(true, newCell.exhausted, 'should exhaust a cell');
 
-    t.notEqual(cell.value, exhaustedCell.value);
+    cell.value = 0;
+    t.notEqual(cell.value, newCell.value, 'should return a brand new cell');
+
+    t.end();
 });
