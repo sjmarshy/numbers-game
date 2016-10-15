@@ -1,2 +1,4 @@
+import './util';
+
 import './cell';
-import './util'
+import './board';
