@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "browserify-istanbul": "^2.0.0",
-    "karma-coverage": "^1.1.1"
+    "karma-coverage": "^1.1.1",
+    "ramda": "^0.22.1"
   }
 }

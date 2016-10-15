@@ -1,7 +1,8 @@
-/* eslint no-console: "off" */
+// type Board = { values :: Array Cell, columns :: Number }
 
-console.log('type Board = { values :: Array Cell, columns :: Number }');
-
-import './fresh';
 import './coordsToIndex';
+
+import './raw';
+import './fresh';
 import './get';
+import './set';
