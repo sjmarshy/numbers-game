@@ -82,10 +82,10 @@ module.exports = function(config) {
         },
 
         thresholdReporter: {
-            statements: 90,
-            branches: 60,
-            functions: 85,
-            lines: 90
+            statements: 97,
+            branches: 91,
+            functions: 95,
+            lines: 98
         }
     });
 };

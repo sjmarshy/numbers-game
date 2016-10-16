@@ -11,7 +11,8 @@ export function coordsToIndex({ columns }, x, y) {
 export function raw(values, columns) {
     return {
         values,
-        columns
+        columns,
+        selected: []
     };
 }
 
