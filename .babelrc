@@ -1,4 +1,12 @@
 {
-  presets: [ 'latest' ],
-  plugins: [ '__coverage__' ]
+    "env": {
+        "test": {
+            presets: [ 'latest' ],
+            plugins: [ '__coverage__', 'transform-flow-strip-types' ]
+        },
+        "dev": {
+            presets: [ 'latest' ],
+            plugins: [ 'transform-flow-strip-types' ]
+        }
+    }
 }
