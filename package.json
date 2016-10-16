@@ -10,6 +10,7 @@
     "dev": "BABEL_ENV=dev browserify -t rollupify -t babelify src/js/index.js > bundle.js"
   },
   "devDependencies": {
+    "babel-eslint": "^7.0.0",
     "babel-plugin-__coverage__": "^11.0.0",
     "babel-plugin-transform-flow-strip-types": "^6.14.0",
     "babel-preset-latest": "^6.16.0",

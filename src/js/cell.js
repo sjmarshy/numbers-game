@@ -1,5 +1,10 @@
 import getRandomInteger from './util/getRandomInteger';
 
+export type Cell = {
+    value: number;
+    exhausted: boolean;
+}
+
 export const raw = (value, exhausted) => {
     if (value > 9 || value < 1) {
         throw new Error('cells cannot hold a value below 1 or above 9');

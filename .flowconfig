@@ -1,0 +1,8 @@
+[ignore]
+
+[include]
+src/js/index.js
+
+[libs]
+
+[options]
