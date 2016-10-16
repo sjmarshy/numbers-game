@@ -1,3 +1,9 @@
-export default function (a, b) {
-  return a + b;
+// @flow
+import { fresh } from './board';
+
+function main() {
+    const b = fresh();
+    console.log(b);
 }
+
+main();
