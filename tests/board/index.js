@@ -25,3 +25,4 @@ import './fresh';
 import './get';
 import './set';
 import './exhaust';
+import './select';

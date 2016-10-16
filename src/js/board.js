@@ -8,11 +8,11 @@ export function coordsToIndex({ columns }, x, y) {
     return (y * columns) + x;
 }
 
-export function raw(values, columns) {
+export function raw(values, columns, selected = []) {
     return {
         values,
         columns,
-        selected: []
+        selected
     };
 }
 
@@ -32,10 +32,14 @@ export function set(board, x, y, cell) {
         .concat(clone(cell))
         .concat(values.slice(insertIndex));
 
-    return raw(newValues, 9);
+    return raw(newValues, board.columns);
 }
 
 export function exhaust(board, x, y) {
     const cell = get(board, x, y);
     return set(board, x, y, exhaustCell(cell));
+}
+
+export function select(board, x, y) {
+    return raw(board.values, board.columns, [x, y]);
 }
